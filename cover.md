@@ -1,17 +1,16 @@
-## Kafka
+## Redis
 
-[Kafka](https://kafka.apache.org/) is a distributed streaming platform used for building real-time data pipelines and streaming apps. It is horizontally scalable, fault-tolerant, wicked fast, and runs in production in thousands of companies.
+[Redis](https://redis.io/topics/introduction) Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache, and message broker.
 
 ## Introduction
 
-This chart bootstraps a [Kafka](https://github.com/bitnami/bitnami-docker-kafka) deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
+This chart bootstraps a [Redis](https://github.com/bitnami/charts/tree/master/bitnami/redis/#installing-the-chart) deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
 
 ## Prerequisites
 
 - Kubernetes 1.12+
 - Helm 3.0-beta3+
-- PV provisioner support in the underlying infrastructure
 
 ## Custom Configuration
 
-To deploy with custom  configuration and explore the available paramaters visit https://github.com/bitnami/charts/tree/master/bitnami/kafka/#parameters
+To deploy with custom configuration and explore the available paramaters visit https://github.com/bitnami/charts/tree/master/bitnami/redis/#parameters
