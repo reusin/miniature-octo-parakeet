@@ -1,0 +1,45 @@
+{
+    "name": "Kafka",
+    "description": "Kafka",
+    "logo": "_images/Custom.png",
+    "has_supporting_content": true,
+    "stack_id": "kafka-bitnami-chart",
+    "type": "Helm",
+    "categories": [
+        "Streaming & Messaging"
+    ],
+    "platform": "Kubernetes",
+    "cover": "cover.md",
+    "meta": {
+        "Type": [
+            "Helm"
+        ],
+        "Install time": [
+            "5 minutes"
+        ],
+        "Categories": [
+            "Streaming & Messaging"
+        ]
+    },
+    "deployment_information": {
+        "Project": "NA",
+        "Deployment Namespace": "helm-kafka"
+    },
+    "commands": [
+        {
+            "description": "Add the bitnami helm repository",
+            "exec": "helm repo add bitnami https://charts.bitnami.com/bitnami"
+        },
+        {
+            "description": "Install Kafka Helm chart",
+            "exec": "helm install my-release bitnami/kafka"
+        }
+    ],
+    "display": [
+        {
+            "name": "Developer Dashboard",
+            "url": "##DNS.host##/codeserver",
+            "enabled": true
+        }
+    ]
+}
