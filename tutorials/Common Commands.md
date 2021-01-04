@@ -1,6 +1,6 @@
 <h2>A few sample commands</h2>
 
-<p>Redis allows atomic operations on the datstructured stored, like appending to a string; incrementing the value in a hash; pushing an element to a list; computing set intersection, union and difference; or getting the member with highest ranking in a sorted set. The following section will provide instructions to perform a few simple commands</p>
+<p>Redis allows atomic operations on the datstructures stored, like appending to a string; incrementing the value in a hash; pushing an element to a list; computing set intersection, union and difference; or getting the member with highest ranking in a sorted set. The following section will provide instructions to perform a few simple commands</p>
 
 <h3>Set Operation </h3>
 <p>Command Pattern: <code>SET key value</code></p>
@@ -57,7 +57,7 @@ redis> HGET myhash field1
 </code></pre>
 
 <h3>Get field value of hash stored as key</h3>
-<p>Command pattern: HGET key field</p>
+<p>Command pattern: <code>HGET key field</code></p>
 <p>The fields set in hash stored at key can be retrieved using HGET</p>
 <pre><code>
 redis> HSET myhash field1 "foo"
