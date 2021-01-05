@@ -55,5 +55,4 @@ npm install
 $ node app.js
 Express server listening on port 3000
 Connected to Redis
-node_redis: Warning: Redis server does not require a password, but a password was supplied.
 </pre></code>
