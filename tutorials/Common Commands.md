@@ -1,6 +1,6 @@
-<h2>A few sample commands</h2>
+<h2>Redis - CRUD commands</h2>
 
-<p>Redis allows atomic operations on the datstructures stored, like appending to a string; incrementing the value in a hash; pushing an element to a list; computing set intersection, union and difference; or getting the member with highest ranking in a sorted set. The following section will provide instructions to perform a few simple commands</p>
+<p>Redis allows atomic operations on the datstructures stored, like appending to a string; incrementing the value in a hash; pushing an element to a list; computing set intersection, union and difference; or getting the member with highest ranking in a sorted set. The following section will provide documentation to perform basic CRUD commands with string values</p>
 
 <h3>Set Operation </h3>
 <p>Command Pattern: <code>SET key value</code></p>
@@ -44,6 +44,19 @@ redis> GET key1
 <p>Command Pattern: <code>MGET key [key ...]</code></p>
 <p>Returns the values of all specified keys. For every key that does not hold a string value or does not exist, the special value nil is returned. Because of this, the operation never fails.</p>
 
+<h3>Delete keys</h3>
+<p>Command Pattern: <code>DEL key [key ...]</code></p>
+<p>Removes the specified keys. A key is ignored if it does not exist.</p>
+
+<pre><code>
+redis> SET key1 "Hello"
+"OK"
+redis> SET key2 "World"
+"OK"
+redis> DEL key1 key2 key3
+(integer) 2
+</code></pre>
+
 <h3>Set fields in hash stored as key</h3>
 </p>Command Patten: <code>HSET key field value [field value ...]</code></p>
 <p>Sets field in the hash stored at key to value. If key does not exist, a new key holding a hash is created. If field already exists in the hash, it is overwritten.</p>
@@ -84,5 +97,28 @@ redis> HMGET myhash field1 field2 nofield
 3) (nil)
 </code></pre>
 
+<h3>Delete fields from hash stored as keys</h3>
+<p>Command Pattern: <code>HDEL key field [field ...]</code></p>
+<p>Removes the specified fields from the hash stored at key. Specified fields that do not exist within this hash are ignored. If key does not exist, it is treated as an empty hash and this command returns 0.</p>
+
+<pre><code>
+redis> HSET myhash field1 "foo"
+(integer) 1
+redis> HDEL myhash field1
+(integer) 1
+redis> HDEL myhash field2
+(integer) 0
+</code></pre>
+
+<h3>Delete all keys in database</h3>
+<p>Command Pattern: <code>FLUSHDB [ASYNC]</code></p>
+<p>Deletes all the keys of the currently selected DB. This command never fails.</p>
+
+<pre><code>
+redis> FLUSHDB
+OK
+</code></pre>
+
+The time-complexity for this operation is O(N), N being the number of keys in the database.<</p>
 <h3>Reference</h3>
 <a href="https://redis.io/commands">Redis Documentation</a>
